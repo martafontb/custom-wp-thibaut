@@ -1,0 +1,32 @@
+@include keyframe(fadeout) {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@include keyframe(fadein) {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@include keyframe(changecolour) {
+    0% {
+        color: hsl(150, 100, 4);
+    }
+
+    100% {
+        color: hsl(40,69,97)
+    }
+}
+
+
+

@@ -1,0 +1,354 @@
+body.category main {
+  margin-bottom: 10em;
+}
+
+.page__header {
+    @include flexCenter(column);
+    padding: 70px 0px 10px;
+    h2.page__title {
+      @include font-size($h1-font-sizes);
+      font-family: $sans;
+    }
+    p {
+      @include font-size($p-header-font-sizes);
+      color: var(--clr-green-400);
+      max-width: 659px;
+      text-align: center;
+      margin-top: 15px;
+      @include mq(small) {
+        max-width: 276px;
+      }
+    }
+    @include mq(small){
+      padding: 0px 0px 10px 0px;
+    }
+  }
+
+  .category-writings {
+    .page__title {
+      color: var(--clr-umber-300);
+    }
+  }
+
+
+.category-writings , .category-podcast {
+  main {
+    margin-bottom:2em;
+  }
+}
+
+  section .card  {
+  @include flexCenter(row);
+  column-gap: 25px;
+  background:var(--clr-umber-100);
+  border-radius: 10px;
+  padding: 30px;
+  margin: 0 auto 2.5em;
+  h3 {
+    margin: 15px 0 5px;
+    @include font-size($h3-font-sizes);
+  }
+  p {
+    color: var(--clr-green-300);
+    margin-bottom: 25px;
+    font-size: 18px;
+
+  }
+  :where(h3, p.card__date,.card__tags) {
+    font-family: $sans;
+    font-size: 17px;
+  }
+  p.card__date, p.card__tags {
+    font-size: 14px;
+  }
+    .card__copy {
+      margin: 25px 0;
+      @include font-size($p-header-font-sizes);
+      p{
+        max-width:400px;
+      }
+    }
+    .card__tags a {
+      background: #F2E2D7;
+      border-radius: 2px;
+      padding: 2px 5px;
+      margin-left: 5px;
+      font-family: $sans;
+      color: var(--clr-umber-300);
+    }
+  }
+
+  a.card__cta {
+    position: relative;
+    margin-right:auto;
+    @include hover-line-revers;
+        &::after {
+        content:url(../img/umber-arrow-right.svg);
+        margin-left:10px;
+        border-bottom:0;
+        position: absolute;
+    }
+  }
+  
+  .post__hero {
+    padding-bottom: 45px;
+    margin-left: auto;
+    margin-right:auto;
+    max-width: 950px;
+    .card {
+      @include mq(mid) {
+        @include flexCenter(column-reverse);
+        gap: 45px;
+      }
+      .card__text {
+        max-width: 450px;
+      }
+    }
+  }
+
+  // section.post {
+  //   display: grid;
+  //   grid-template-columns: 1fr 1fr;
+  //   place-items: center;
+  //   row-gap: 150px;
+  //   column-gap: 45px;
+  //   margin-bottom: 15em;
+  //   .card {
+  //     max-width: 362px;
+  //     overflow: hidden;
+  //     margin: auto;
+  //   }
+  //   @include mq(small) {
+  //     grid-template-columns: 1fr;
+  //     .card {
+  //       overflow: visible;
+  //     }
+  //   }
+  // }
+
+  .card__image {
+    max-width: 450px;
+    object-fit: cover;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      @include aspect-ratio(3,2);
+      display: block;
+    }
+    @include mq(small){
+      margin-bottom: 45px;
+    }
+  }
+
+  .card__words {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5rem ;
+  }
+
+//podcast 
+
+  .category-podcast {
+    .page__title,
+    a.card__cta  {
+      color: var(--clr-rose-200);
+    }
+    section.podcast {
+      display: flex;
+      flex-wrap: wrap;
+      max-width:800px;
+      margin-left:auto;
+      margin-right: auto;
+      gap: 60px;
+      @include mq(mid) {
+        gap: 60px 20px ;
+        .card {
+          max-width: 250px;
+        }
+      }
+
+      .card {
+        max-width: 290px;
+        display: flex;
+        flex-direction: column;
+        h3 {
+          @include font-size($p-header-font-sizes);
+        }
+      }
+
+      @include mq(small) {
+        flex-direction: column;
+      }
+    }
+
+    .card__image {
+      width: 290px;
+
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+      @include mq(small){
+        height: 70vw;
+      }
+    }
+    .card__text {
+
+      min-height: 181px;
+      display: flex;
+      flex-direction: column;
+      align-content:flex-start;
+      justify-content: space-between;
+    }
+    .card__cta{
+      margin-top: 25px;
+    }
+    @include mq (small) {
+      .card__image {
+        width:100%;
+      }
+    }
+  
+  }
+  
+
+
+  
+
+//client
+
+.client_section {
+  @include flexCenter(column);
+  gap: 200px 95px;
+  @include mq (mid) {
+    gap: 100px 95px;
+  }
+  @include mq (small) {
+    padding:0;
+    gap: 40px 35px;
+  }
+}
+  
+.client__card {
+  @include flexCenter(row);
+  gap: 25px;
+  padding: 25px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  @include mq (mid) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 40px;
+      gap: 40px;
+      align-content: center;
+      overflow: hidden;
+  }
+  @include mq (small) {
+    max-width: 300px;
+    .client__image img {
+      max-width: 300px;
+    }
+  }
+}
+
+  .client__image {
+    min-width: 450px;
+    max-width: 450px;
+    width:100%;
+    display: flex;
+    justify-content: flex-start;
+    img {
+      @include aspect-ratio(1.60,1);
+    }
+    @include mq (mid) {
+      min-width: 0px;
+    }
+  }
+
+  .client__card:nth-child(even){
+    flex-direction: row-reverse;
+    .client__image {
+      justify-content: flex-end;
+    }
+    @include mq(mid) {
+      flex-direction: column;
+    }
+  }
+
+  div.client__words {
+    min-width: 400px;
+    max-width: 400px;
+    @include mq(small) {
+      min-width: 0px;
+      max-width: 400px;
+    }
+    div {
+      margin: 25px 0px;
+      @include font-size($p-font-sizes);
+      h4{
+        color: var(--clr-green-400);
+        @include font-size($p-font-sizes);
+        font-family: $serif;
+        font-style: italic;
+        margin-bottom: 5px;
+      }
+      p {
+        color: var(--clr-green-300);
+        @include font-size($p-font-sizes);
+      }
+      @include mq(small) {
+        img {
+          max-width: 80%;
+        }
+
+      }
+    }
+  }
+  
+  a.client__cta {
+    position: relative;
+    margin-right:auto;
+    color: var(--clr-green-400);
+    @include hover-line-revers;
+        &::after {
+        content:url(../img/green-arrow.svg);
+        margin-left:10px;
+        border-bottom:0;
+        position: absolute;
+    }
+  }
+
+
+
+  .pagination {
+    @include flexCenter(row);
+    margin-bottom: 100px;
+    a.page-numbers {
+      color: var(--clr-umber-300);
+      margin-left: 12px;
+      margin-right: 12px;
+      @include hover-line-revers;
+    }
+    a.next, a.prev {
+      content: "";
+      position: relative;
+      &::before{
+        content: "";
+        width:0;
+      }
+    }
+    span.current {
+      color: var(--clr-umber-300);
+      text-decoration: none;
+      border-bottom:0;
+      font-family: $sans;
+      padding:2px;
+    }
+
+  }
+
+  
