@@ -140,9 +140,15 @@ section {
         padding: 10px 0px 18px 0px;
         font-size: 20px;
       }
-    p:last-child{
-      padding: 22px 0px 0px 0px;
-    }
+  }
+}
+
+.wp-block-column {
+  p:last-child{
+      padding-bottom: 0;
+      @include mq(small){
+        padding-bottom: 18px;
+      }
   }
 }
 

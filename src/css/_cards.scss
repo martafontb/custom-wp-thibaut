@@ -189,9 +189,6 @@ body.category main {
       flex-direction: column;
       align-content:flex-start;
       justify-content: space-between;
-      @include mq(small){
-        margin-top: 45px;
-      }
     }
 
     .card__cta{
