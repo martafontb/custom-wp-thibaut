@@ -1,5 +1,8 @@
 body.category main {
   margin-bottom: 10em;
+  @include mq(small) {
+    margin-bottom: 5em;
+  }
 }
 
 .page__header {
@@ -42,7 +45,7 @@ body.category main {
   column-gap: 25px;
   background:var(--clr-umber-100);
   border-radius: 10px;
-  padding: 30px;
+  padding: 25px;
   margin: 0 auto 2.5em;
   h3 {
     margin: 15px 0 5px;
@@ -58,7 +61,7 @@ body.category main {
     font-family: $sans;
     font-size: 17px;
   }
-  p.card__date, p.card__tags {
+  p.card__date, p.card__tags, .card__tags a {
     font-size: 14px;
   }
     .card__copy {
@@ -100,31 +103,17 @@ body.category main {
         @include flexCenter(column-reverse);
         gap: 45px;
       }
+      @include mq(small){
+        justify-content: space-between;
+      }
       .card__text {
         max-width: 450px;
+        @include mq(small){
+          margin-top: 40px;
+        } 
       }
     }
   }
-
-  // section.post {
-  //   display: grid;
-  //   grid-template-columns: 1fr 1fr;
-  //   place-items: center;
-  //   row-gap: 150px;
-  //   column-gap: 45px;
-  //   margin-bottom: 15em;
-  //   .card {
-  //     max-width: 362px;
-  //     overflow: hidden;
-  //     margin: auto;
-  //   }
-  //   @include mq(small) {
-  //     grid-template-columns: 1fr;
-  //     .card {
-  //       overflow: visible;
-  //     }
-  //   }
-  // }
 
   .card__image {
     max-width: 450px;
@@ -132,12 +121,14 @@ body.category main {
     img {
       max-width: 100%;
       max-height: 100%;
-      object-fit: contain;
-      @include aspect-ratio(3,2);
+      object-fit: cover;
       display: block;
-    }
-    @include mq(small){
-      margin-bottom: 45px;
+      @include mq(small){
+        aspect-ratio: (1,1);
+      }
+      @include mq(large){
+        @include aspect-ratio(3,2);
+      }
     }
   }
 
@@ -185,7 +176,6 @@ body.category main {
 
     .card__image {
       width: 290px;
-
       display: flex;
       flex-wrap: nowrap;
       justify-content: space-around;
@@ -194,13 +184,16 @@ body.category main {
       }
     }
     .card__text {
-
       min-height: 181px;
       display: flex;
       flex-direction: column;
       align-content:flex-start;
       justify-content: space-between;
+      @include mq(small){
+        margin-top: 45px;
+      }
     }
+
     .card__cta{
       margin-top: 25px;
     }
@@ -212,6 +205,9 @@ body.category main {
   
   }
   
+
+
+
 
 
   
@@ -232,7 +228,7 @@ body.category main {
   
 .client__card {
   @include flexCenter(row);
-  gap: 25px;
+  gap: 45px;
   padding: 25px;
   max-width: 900px;
   margin-left: auto;
@@ -350,5 +346,3 @@ body.category main {
     }
 
   }
-
-  

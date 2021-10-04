@@ -30,3 +30,11 @@
 
 
 
+.fade-out {
+    background-color: transparent;
+    transition: all .5s ease-in-out;
+  }
+     
+  .fade-in {
+  @include animation(0s, 2s, fadein);
+  }

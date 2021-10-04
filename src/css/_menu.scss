@@ -2,7 +2,7 @@
 header {
     display: grid;
     grid-template-columns: repeat(2, minmax(300px, 1fr));
-    margin: 2.5em 5em 2em 5em;
+    margin: 2em 5em 2em 5em;
     svg {
         margin-right: auto;
         place-self: center;
@@ -14,6 +14,11 @@ header {
     @include mq(small) {
         grid-template-columns: repeat(2, minmax(100px, 1fr));
     }
+}
+
+.site-branding {
+    display: flex;
+    align-items: center;
 }
 
 #logo1 {

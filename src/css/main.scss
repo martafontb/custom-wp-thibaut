@@ -12,46 +12,36 @@
 @import 'cursor';
 
 
-
-.fade-out {
-  background-color: transparent;
-  transition: all .5s ease-in-out;
+a {
+  text-decoration: none;
+  font-family: $sans;
+  cursor: none;
 }
    
-.fade-in {
-@include animation(0s, 2s, fadein);
+h1 {
+  @include font-size($h1-font-sizes);
+  font-family: $sans;
+}
+   
+p, ul, ol, a {
+  @include font-size($p-font-sizes);
 }
 
-   a {
-     text-decoration: none;
-     font-family: $sans;
-     cursor: none;
-   }
-   
-   h1 {
-     @include font-size($h1-font-sizes);
-     font-family: $sans;
-   }
-   
-   p, ul, ol, a {
-     @include font-size($p-font-sizes);
-   }
-   
-   p {
-     font-family: $serif;
-   }
+p {
+  font-family: $serif;
+}
 
-   
-   
+     
 section {
-  padding: 0 163px;
-    @include mq(mid) {
-      padding: 0 53px;
+    padding: 0 163px;
+      @include mq(mid) {
+        padding: 0 53px;
+      }
+      @include mq(small) {
+      padding: 0 35px;
     }
-    @include mq(small) {
-    padding: 0 35px;
   }
-  }
+
 
 .home-page-block {
   max-width: 1200px;
@@ -60,15 +50,21 @@ section {
   display: flex;
   flex-direction: column;
   .wp-block-columns {
-    height: 80vh;
-    padding: 163px;
-    @include animation(0s, 2s, fadein);
+    position: relative;
     align-items: center;
     justify-content: center;
+    height: 80vh;
+    padding: 163px;
+
+    @include animation(0s, 2s, fadein);
+
     @include mq(mid) {
       padding: 0 53px;
     }
+
     @include mq(small) {
+     margin-top: 1em;
+     margin-bottom: 5em;
      padding: 15px 35px;
      height: 70vh;
    }
@@ -86,15 +82,22 @@ section {
    }
   }
 }
-.wp-block-columns:first-child{
+.wp-block-columns:first-child, 
+.wp-block-columns:nth-child(2){
   &::after{
     content: url(../img/umber-arrow-right.svg);
     position: absolute;
-    bottom: 0px;
-    margin-bottom: 75px;
+    bottom: 30px;
     transform: rotate(90deg) scale(2);
   }
+  @include mq(small) {
+    margin-bottom: 6.5em;
+    &::after {
+         bottom: -30px;
+    }
+  }
 }
+
 
 
 
@@ -130,28 +133,37 @@ section {
       line-height: $line-height-headings;
       padding: 22px 0px 30px 0px;
       max-width: 375px;
+
       @include font-size($p-header-font-sizes);
+
       @include mq(small){
         padding: 10px 0px 18px 0px;
         font-size: 20px;
       }
-  
+    p:last-child{
+      padding: 22px 0px 0px 0px;
+    }
   }
 }
-
 
 // /* for scroll snapping on larger screens */
 @supports (scroll-snap-type: y mandatory) {
   @media (min-width: 640px) {
     html {
       scroll-snap-type: y mandatory;
+      overflow-y: scroll; 
       scroll-padding: 50px 0 0 0;
     }
-  div.header, .wp-block-columns, div.footer {
+    div.header, .wp-block-columns, div.footer {
       scroll-snap-align: start;
+    } 
+    footer {
+      scroll-snap-stop: normal;
     }
   }
 }
+
+
 
 div.header {
   padding-top: 0.5em;
@@ -198,7 +210,6 @@ img {
        }
 .wp-block-image {
   margin: 0;
-  max-height: 290px;
   img {
         object-fit: contain;
         @include aspect-ratio(4,3);
@@ -333,8 +344,14 @@ div {
        h4 {
         margin: 35px auto 15px auto;
       }
-      p,a {
+      p {
         color: var(--clr-green-400);
+      }
+      a {
+        color: var(--clr-green-300);
+        font-family: $serif-italic;
+        @include font-size($p-header-font-sizes);
+        border-bottom: 1px solid var(--clr-green-300);
       }
      }
    

@@ -43,6 +43,10 @@
     max-width: 100%;
     word-break: keep-all;
   }
+
+  h1, h2, h3 {
+    line-height: $line-height-headings;
+  }
   
   html {
     scroll-behavior: smooth;

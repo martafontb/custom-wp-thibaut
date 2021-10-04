@@ -153,8 +153,7 @@ gulp.task('fonts', function() {
         'src/js/**/*.js', 
         gulp.series('scripts')),
     gulp.watch(
-        'src/fonts/**/*.woff',
-        'src/fonts/**/*.woff2', 
+        'src/fonts/**/*.{woff,woff2}',
         gulp.series('fonts'))
  })
 
