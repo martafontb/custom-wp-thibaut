@@ -152,8 +152,6 @@ function thibaut_scripts() {
 	wp_style_add_data( 'thibaut-style', 'rtl', 'replace' );
 
 	// CSS
-	wp_enqueue_style( 'splitting-css', "https://unpkg.com/splitting/dist/splitting.css");
-	wp_enqueue_style( 'splitting-cells-css', "https://unpkg.com/splitting/dist/splitting-cells.css");
 	wp_enqueue_style( 'font-awesome-css', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 	wp_enqueue_style( 'thibaut-css', get_template_directory_uri() . '/dist/css/main.css');
 

@@ -1,7 +1,7 @@
 body.category main {
-  margin-bottom: 10em;
+  margin-bottom: 6.25em;
   @include mq(small) {
-    margin-bottom: 5em;
+    margin-bottom: 3.125em;
   }
 }
 

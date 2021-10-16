@@ -1,0 +1,21 @@
+.error-404 {
+    height: 80vh;
+    @include flexCenter(column);
+    align-items: center;
+      .page-content {
+      @include flexCenter(column);
+      align-items: center;
+        a {
+          margin-top: 35px;
+          color: var(--clr-umber-300);
+          @include hover-line-revers;
+          position:relative;
+            &::after {
+              content:url(../img/umber-arrow-right.svg);
+              margin-left:10px;
+              border-bottom:0;
+              position: absolute;
+          }
+        }
+    }
+  }

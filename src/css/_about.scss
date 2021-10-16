@@ -1,0 +1,116 @@
+div {  
+    h4, h3 {
+      font-family: $sans;
+      @include font-size($h3-font-sizes);
+      margin: 20 0;
+    }
+    p {
+      @include font-size($p-header-font-sizes);
+    }
+
+  .page__body {
+    margin: 30px auto 100px auto;
+    h4, p {
+      max-width: 705px;
+      text-align: center;
+      margin:0 auto;
+      @include mq(small) {
+        max-width: 276px;
+      }
+    }
+    h4 {
+     margin: 35px auto 15px auto;
+   }
+   p {
+     color: var(--clr-green-400);
+     margin-bottom:25px;
+   }
+   a {
+     color: var(--clr-green-300);
+     font-family: $serif-italic;
+     @include font-size($p-header-font-sizes);
+     border-bottom: 1px solid var(--clr-green-300);
+   }
+  }
+
+  section.about {
+    background-color: var(--clr-umber-300);
+    padding: 75px 169px;
+    @include mq(small) {
+      padding: 0px; 
+    }
+  }
+  .about__wrapper {
+    max-width: 940px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 95px;
+    margin:auto;
+    @include mq(mid) {
+     flex-direction: column;
+    }
+    @include mq(small) {
+      padding: 20px;
+      gap: 35px;
+ 
+    }
+  }
+  .about__img {
+    margin: 20 0;
+    img {
+      max-width: 100%;
+    }
+  }
+  .about__text {
+    max-width: 440px;
+    overflow: hidden;
+    p {
+      @include font-size($p-header-font-sizes);
+    }
+
+    a.expander {
+      position: relative;
+      margin-top: 20px;
+      margin-right:auto;
+      @include hover-line-revers;
+          &::before {
+            background-color: var(--clr-rose-100);
+            bottom: -1px;
+          }
+          &::after {
+          content:url(../img/down-arrow.svg);
+          transition: $default-transition;
+          margin-left:10px;
+          top: -3px;
+          border-bottom:0;
+          position: absolute;
+          }
+    }
+
+    a.info-toggle {
+      &::after {
+        content:url(../img/down-arrow.svg);
+        transform: rotate(180deg);
+        margin-left:10px;
+        top:3px;
+        border-bottom:0;
+        position: absolute;
+        }
+    }
+
+    .about__open {
+      overflow: hidden;
+      margin-bottom: 25px;
+      @include mq(small) {
+      height: auto;
+      margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.about__text__first__paragraph {
+  margin-top: 15px;
+  margin-bottom: 25px;
+}

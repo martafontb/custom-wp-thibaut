@@ -28,7 +28,7 @@
             <div class="copyright">
               <p class="text-green-200"> 
                 <span class="text-rose-100">© Thibaut Verrue, 2021</span> 
-                - <a href="">Privacy policy</a>
+                - <a href="<?php echo esc_url( __( 'https://thibautverrue.com/terms-and-conditions/', 'Nele Kempenaers' ) ); ?>">Privacy policy</a>
                 - Web design: 
                 <a href="<?php echo esc_url( __( 'https://nelekempenaers.com/work/', 'Nele Kempenaers' ) ); ?>">Nele Kempenaers</a> 
                 - Web development: 
