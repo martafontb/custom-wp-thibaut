@@ -296,3 +296,19 @@ height: 35vh;
   }
 
 }
+
+footer {
+  padding: 0 80 80 80;
+  @include mq (small) {
+    padding: 0 10 80 10;
+  }
+}
+
+#footer{
+  @include flexCenter(column);
+  justify-content: space-around;
+  text-align: center;
+  p{
+    font-family: $sans;
+  }
+}
