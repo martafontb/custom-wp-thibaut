@@ -49,3 +49,8 @@ footer.addEventListener("mouseover", function(){
 footer.addEventListener("mouseout", function(){
   arrow.classList.remove("footer");
 })
+
+window.addEventListener('scroll', (e) => {
+  const fromTop = parseInt(cursor.getAttribute('data-fromTop'));
+  cursor.style.top = scrollY + fromTop + 'px';
+});

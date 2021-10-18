@@ -2,7 +2,7 @@
     height: 80vh;
     @include flexCenter(column);
     align-items: center;
-      .page-content {
+      .page-content, .page-header {
       @include flexCenter(column);
       align-items: center;
         a {

@@ -1,6 +1,3 @@
-AOS.init();
-
-
 const scrollToTop = document.querySelector("div.back-to-top");
 
 scrollToTop.addEventListener("click", function(){
@@ -12,3 +9,4 @@ scrollToTop.addEventListener("click", function(){
   });
 });
 
+AOS.init();

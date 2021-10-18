@@ -23,7 +23,11 @@ get_header();
 
 			get_template_part( 'template-parts/content', 'header' );
 			get_template_part( 'template-parts/content', 'page' );
-			get_template_part( 'template-parts/content', 'manifesto' );
+
+			if (is_page( 'manifesto' ) ):
+				get_template_part( 'template-parts/content', 'manifesto' );
+			endif;
+		
 		endwhile; // End of the loop.
 		?>
 		<?php
