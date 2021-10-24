@@ -11,7 +11,11 @@
 
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<?php if(is_front_page()) { ?>
+  <html class="homepagebodyclass" <?php language_attributes(); ?>>
+<?php } else { ?>
+  <html class="auto" <?php language_attributes(); ?>>
+<?php } ?>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">

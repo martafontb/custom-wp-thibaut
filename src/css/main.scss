@@ -154,7 +154,7 @@ section {
 // /* for scroll snapping on larger screens */
 @supports (scroll-snap-type: y mandatory) {
   @media (min-width: 640px) {
-    html {
+    html.homepagebodyclass {
       margin: 0;
       padding: 0;
       overflow: hidden;
@@ -178,7 +178,9 @@ section {
   }
 }
 
-
+html.auto{
+  overflow: auto;
+}
 
 
 div.header {

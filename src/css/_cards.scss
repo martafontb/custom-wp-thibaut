@@ -272,6 +272,7 @@ div.client__words {
     min-width: 0px;
     max-width: 400px;
   }
+
   div {
     margin: 25px 0px;
     @include font-size($p-font-sizes);
@@ -293,7 +294,11 @@ div.client__words {
 
     }
   }
+  div.client__words-img{
+    margin:0;
+  }
 }
+
   
 a.client__cta {
   position: relative;

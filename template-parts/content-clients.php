@@ -10,10 +10,12 @@ onclick="location.href='<?php the_permalink(); ?>'">
              loading="lazy">
     </div>
     <div class="client__words">
+        <div class="client__words-img">
         <img src="<?php the_field('client_logo') ?>" 
              alt="logo"
-             width="450px"
+             height="100px"
              loading="lazy">
+        </div>
     <div> 
     <h4><?php the_title(); ?></h4>
     <p> <?php the_excerpt(); ?></p>
