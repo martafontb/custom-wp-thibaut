@@ -58,8 +58,6 @@ section {
     height: 80vh;
     padding: 0 163px;
 
-    @include animation(0s, 2s, fadein);
-
     @include mq(mid) {
       padding: 0 53px;
     }
@@ -90,7 +88,7 @@ section {
   &::after{
     content: url(../img/umber-arrow-right.svg);
     position: absolute;
-    bottom: 30px;
+    bottom: 40px;
     transform: rotate(90deg) scale(2);
   }
   @include mq(small) {
@@ -157,20 +155,31 @@ section {
 @supports (scroll-snap-type: y mandatory) {
   @media (min-width: 640px) {
     html {
-      scroll-snap-type: y mandatory;
-      overflow-y: scroll; 
-      scroll-padding: 50px 0 0 0;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
     }
-    body.home {
-      div.header, .wp-block-columns, div.footer {
+    body.home{
+      max-height: 100vh;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      div.header, .wp-block-columns {
         scroll-snap-align: start;
-      } 
+        height: 100vh;
+      }
+      .wp-block-columns:first-child{
+        height: calc(100vh - 5.625rem) ;
+      }
       footer {
+        scroll-snap-align: start;
         scroll-snap-stop: normal;
       }
     }
   }
 }
+
+
+
 
 div.header {
   padding-top: 0.5em;

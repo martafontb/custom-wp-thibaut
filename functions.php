@@ -158,15 +158,17 @@ function thibaut_scripts() {
 	// JS
 	wp_enqueue_script( 'thibaut-navigation', "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" , array(), _S_VERSION, true );
 	wp_enqueue_script( 'thibaut-navigation', "https://unpkg.com/splitting/dist/splitting.min.js", array(), _S_VERSION, true );
-
+	
 	//aos
 	wp_enqueue_style('AOS_animate', 'https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css', false, null);
 	wp_enqueue_script('AOS', 'https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js', false, null, true);
 	wp_enqueue_script('theme-js', get_template_directory_uri() . '/dist/js/theme.js', array( 'AOS' ), null, true);
 
 	//gsap	
-	wp_enqueue_script('gsap', "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js", false, null, true);
+	wp_enqueue_script('gsap', "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js", false, null, true);
+	wp_enqueue_script('scrollTrigger', "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js", false, null, true);
 	wp_enqueue_script('gsap-js', get_template_directory_uri() . '/dist/js/gsap.js', array('gsap'), null, true);
+	wp_enqueue_script('blocks-js', get_template_directory_uri() . '/dist/js/blocks.js', null, true);
 
 	wp_enqueue_script( 'thibaut-cursor', get_template_directory_uri() . '/dist/js/cursor.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'thibaut-navigation', get_template_directory_uri() . '/dist/js/navigation.js', array(), _S_VERSION, true );
